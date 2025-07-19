@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Contacts>
+    <Contact>
+        <FirstName>Jhon</FirstName>
+        <LastName>Jhon</LastName>
+        <PhoneNumber>54689-78524</PhoneNumber>
+        <Notes>test1</Notes>
+    </Contact>
+    <Contact>
+        <FirstName>Jane</FirstName>
+        <LastName>Smith</LastName>
+        <PhoneNumber>555-0102</PhoneNumber>
+        <Notes>Friend from college</Notes>
+    </Contact>
+    <Contact>
+        <FirstName>Emily</FirstName>
+        <LastName>Williams</LastName>
+        <PhoneNumber>555-0104</PhoneNumber>
+        <Notes>Neighbor</Notes>
+    </Contact>
+</Contacts>
+

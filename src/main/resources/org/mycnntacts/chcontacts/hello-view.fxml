@@ -1,16 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="org.mycnntacts.chcontacts.HelloController"
+          style="-fx-border-color:black; -fx-grid-lines-visible: true "
+          stylesheets="@styles.css">
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.mycnntacts.chcontacts.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+    <MenuBar GridPane.rowIndex="0">
+        <Menu text="Contacts">
+            <MenuItem text="Add Contact"/>
+            <MenuItem text="Delete Contact"/>
+        </Menu>
+    </MenuBar>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+
+    <!--    <Label text="First Name" GridPane.rowIndex="1" GridPane.columnIndex="0" alignment="CENTER" maxWidth="Infinity"-->
+    <!--           GridPane.hgrow="ALWAYS" styleClass="Label"/>-->
+    <!--    <Label text="Last Name" GridPane.rowIndex="1" GridPane.columnIndex="1" alignment="CENTER" maxWidth="Infinity"-->
+    <!--           GridPane.hgrow="ALWAYS" styleClass="Label"/>-->
+    <!--    <Label text="Phone Nunber" GridPane.rowIndex="1" GridPane.columnIndex="2" alignment="CENTER" maxWidth="Infinity"-->
+    <!--           GridPane.hgrow="ALWAYS" styleClass="Label"/>-->
+    <!--    <Label text="Notes" GridPane.rowIndex="1" GridPane.columnIndex="3" alignment="CENTER" maxWidth="Infinity"-->
+    <!--           GridPane.hgrow="ALWAYS" styleClass="Label"/>-->
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" />
+        <ColumnConstraints hgrow="ALWAYS" />
+        <ColumnConstraints hgrow="ALWAYS" />
+        <ColumnConstraints hgrow="ALWAYS" />
+    </columnConstraints>
+
+    <TableView fx:id="contactTable"
+               GridPane.rowIndex="2"
+               GridPane.columnSpan="4"
+               GridPane.vgrow="ALWAYS"
+               GridPane.hgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="firstNameCol" minWidth="100" text="First Name"/>
+            <TableColumn fx:id="lastNameCol" minWidth="100"  text="Last Name"/>
+            <TableColumn fx:id="phoneNumCol" minWidth="100"  text="Phone Num"/>
+            <TableColumn fx:id="notesCol" minWidth="100"  text="Notes"/>
+        </columns>
+
+    </TableView>
+
+</GridPane>

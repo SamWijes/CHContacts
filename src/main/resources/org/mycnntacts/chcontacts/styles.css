@@ -1,0 +1,4 @@
+.Label{
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(to bottom,white,gray);
+}
