@@ -4,7 +4,6 @@
 <?import javafx.scene.layout.*?>
 <GridPane xmlns:fx="http://javafx.com/fxml"
           fx:controller="org.mycnntacts.chcontacts.HelloController"
-          style="-fx-border-color:black; -fx-grid-lines-visible: true "
           stylesheets="@styles.css">
 
     <MenuBar GridPane.rowIndex="0">
