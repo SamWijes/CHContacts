@@ -3,15 +3,23 @@ package org.mycnntacts.chcontacts;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.SelectionModel;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Window;
 import org.mycnntacts.chcontacts.datamodel.Contact;
+
+import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Paths;
+import java.util.Optional;
 
 public class HelloController {
 
+	@FXML
+	public GridPane mainWindow;
 	@FXML
 	private TableView<Contact> contactTable;
 
@@ -49,5 +57,32 @@ public class HelloController {
 
 
 	}
+
+
+	public void showAddDialog() throws IOException {
+
+		Dialog<ButtonType> dialog=new Dialog<>();
+		dialog.setTitle("Add Contact");
+		dialog.initOwner(mainWindow.getScene().getWindow());
+//		Parent root=FXMLLoader.load(getClass().getResource("contactDialog.fxml"));
+		FXMLLoader loader=new FXMLLoader(getClass().getResource("contactDialog.fxml"));
+		dialog.getDialogPane().setContent(loader.load());
+
+		dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK,ButtonType.CANCEL);
+		Optional<ButtonType> result=dialog.showAndWait();
+		if (result.isPresent() && result.get()==ButtonType.OK){
+
+			ContactDialogController controller = loader.getController();
+			Contact contact= controller.processInput();
+			contactList.add(contact);
+		}
+//		dialog.show();
+	}
+
+	public void deleteContact(){
+		Contact contact=contactTable.getSelectionModel().getSelectedItem();
+		contactList.remove(contact);
+	}
+
 
 }

@@ -2,14 +2,14 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<GridPane xmlns:fx="http://javafx.com/fxml"
+<GridPane fx:id="mainWindow" xmlns:fx="http://javafx.com/fxml"
           fx:controller="org.mycnntacts.chcontacts.HelloController"
           stylesheets="@styles.css">
 
     <MenuBar GridPane.rowIndex="0">
         <Menu text="Contacts">
-            <MenuItem text="Add Contact"/>
-            <MenuItem text="Delete Contact"/>
+            <MenuItem text="Add Contact" onAction="#showAddDialog"/>
+            <MenuItem text="Delete Contact" onAction="#deleteContact"/>
         </Menu>
     </MenuBar>
 
