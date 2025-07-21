@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <GridPane fx:id="mainWindow" xmlns:fx="http://javafx.com/fxml"
           fx:controller="org.mycnntacts.chcontacts.HelloController"
           stylesheets="@styles.css">
@@ -35,7 +36,11 @@
                GridPane.vgrow="ALWAYS"
                GridPane.hgrow="ALWAYS">
         <columns>
-            <TableColumn fx:id="firstNameCol" minWidth="100" text="First Name"/>
+            <TableColumn  minWidth="100" text="First Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="firstName"/>
+                </cellValueFactory>
+            </TableColumn>
             <TableColumn fx:id="lastNameCol" minWidth="100"  text="Last Name"/>
             <TableColumn fx:id="phoneNumCol" minWidth="100"  text="Phone Num"/>
             <TableColumn fx:id="notesCol" minWidth="100"  text="Notes"/>

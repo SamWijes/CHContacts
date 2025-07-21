@@ -49,13 +49,14 @@ public class HelloController {
 
 		contactTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
-		contactTable.setItems(contactList);
-		contactList.add(new Contact("Jhon", "Doe", "875-9658", "first"));
-		contactList.add(new Contact("Jhon", "Doe", "875-9658", "first"));
-		contactList.add(new Contact("Jhon", "Doe", "875-9658", "first"));
-		contactList.add(new Contact("Jhon", "Doe", "875-9658", "first"));
+		contactTable.setItems(data.getContacts());
+//		contactTable.setItems(contactList);
+//		contactList.add(new Contact("Jhon", "Doe", "875-9658", "first"));
+//		contactList.add(new Contact("Jhon", "Doe", "875-9658", "first"));
+//		contactList.add(new Contact("Jhon", "Doe", "875-9658", "first"));
+//		contactList.add(new Contact("Jhon", "Doe", "875-9658", "first"));
 
-		firstNameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+//		firstNameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
 		lastNameCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
 		phoneNumCol.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
 		notesCol.setCellValueFactory(new PropertyValueFactory<>("notes"));
@@ -79,7 +80,8 @@ public class HelloController {
 
 			ContactDialogController controller = loader.getController();
 			Contact contact= controller.processInput();
-			contactList.add(contact);
+//			contactList.add(contact);
+			data.addContact(contact);
 			data.saveContacts();
 		}
 //		dialog.show();
