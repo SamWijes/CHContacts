@@ -10,6 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Window;
 import org.mycnntacts.chcontacts.datamodel.Contact;
+import org.mycnntacts.chcontacts.datamodel.ContactData;
 
 import java.io.IOException;
 import java.net.URL;
@@ -37,8 +38,12 @@ public class HelloController {
 
 	private ObservableList<Contact> contactList= FXCollections.observableArrayList();
 
+	private ContactData data;
+
 	@FXML
 	public void initialize() {
+		data=new ContactData();
+		data.loadContacts();
 //		 Resize policy to fill table width
 		contactTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
@@ -75,6 +80,7 @@ public class HelloController {
 			ContactDialogController controller = loader.getController();
 			Contact contact= controller.processInput();
 			contactList.add(contact);
+			data.saveContacts();
 		}
 //		dialog.show();
 	}
