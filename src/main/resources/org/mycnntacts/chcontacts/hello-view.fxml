@@ -10,6 +10,7 @@
     <MenuBar GridPane.rowIndex="0">
         <Menu text="Contacts">
             <MenuItem text="Add Contact" onAction="#showAddDialog"/>
+            <MenuItem text="Edit Contact" onAction="#showEditContactDialog"/>
             <MenuItem text="Delete Contact" onAction="#deleteContact"/>
         </Menu>
     </MenuBar>
